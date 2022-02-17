@@ -42,11 +42,18 @@ public class UsuarioControlador {
     }
     
     public Usuario getUsuario(String username){
-        Usuario user = null;
-        for(Usuario usuario: usuarios){
-            if(usuario.getUsername().equals(username)) user = usuario;
+        Usuario aux = null;
+        for(Usuario user: usuarios){
+            if(user.getUsername().equals(username)) aux = user;
         }
-        return user;
+        return aux;
+    }
+    public Usuario getUsuario(Usuario usuario){
+        Usuario aux = null;
+        for(Usuario user: usuarios){
+            if(user.getIdentificacion().equals(usuario.getIdentificacion())) aux = user;
+        }
+        return aux;
     }
     
     public boolean registrarUsuario(Usuario usuario) {

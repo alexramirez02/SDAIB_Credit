@@ -5,12 +5,9 @@
  */
 package sdaib_credit.controlador;
 
-import sdaib_credit.modelo.UsuarioAdministrador;
-import sdaib_credit.vista.UIPanelPrincipal;
 import sdaib_credit.vista.UIPrincipal;
 
 /**
- *
  * @author User
  */
 public class Main {

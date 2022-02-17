@@ -54,11 +54,18 @@ public class RegistroUsuarioControlador implements IRegistroUsuario{
 
     @Override
     public void registrar() {
-        Usuario user = usuarioControlador.getUsuario(usuario.getUsername());
+        Usuario user = usuarioControlador.getUsuario(usuario);
         if(user != null){
-            JOptionPane.showMessageDialog(null, "El usuario '" + user.getUsername() + "' ya se encuentra registrado");
+            JOptionPane.showMessageDialog(null, "La parsona con identificacion '" + user.getIdentificacion()
+                    + "' ya tiene un usuario registrado");
             return;
         }
+        user = usuarioControlador.getUsuario(usuario.getUsername());
+        if(user != null){
+            JOptionPane.showMessageDialog(null, "El username '" + user.getUsername() + "' ya se encuentra registrado");
+            return;
+        }
+        
         boolean seRegistroCorrectamente = usuarioControlador.registrarUsuario(usuario);
         if(seRegistroCorrectamente){
             JOptionPane.showMessageDialog(null, "El usuario se ha registrado correctamente");
