@@ -5,10 +5,71 @@
  */
 package sdaib_credit.controlador;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import sdaib_credit.modelo.Usuario;
+
 /**
- *
  * @author User
  */
 public class UsuarioControlador {
+    private Gson gson;
+    private String json;
+    private final String filePath = "src/Persistencia/Usuarios.json";
+    private Usuario[] usuarios;
+    
+    public UsuarioControlador() {
+        gson = new Gson();
+        json = "";
+        try (BufferedReader bfReader = new BufferedReader(new FileReader(filePath))) {
+            String line;
+            while ((line = bfReader.readLine()) != null) {
+                json += line;
+            }
+
+        } catch (FileNotFoundException ex) {
+            System.out.println(ex.getMessage());
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        }
+        usuarios = gson.fromJson(json, Usuario[].class);
+    }
+    
+    public Usuario getUsuario(String username){
+        Usuario user = null;
+        for(Usuario usuario: usuarios){
+            if(usuario.getUsername().equals(username)) user = usuario;
+        }
+        return user;
+    }
+    
+    public boolean registrarUsuario(Usuario usuario) {
+        int size = usuarios.length;
+        //Usuario[] newList = new Usuario[size + 1];
+        gson = new GsonBuilder().setPrettyPrinting().create();
+        json = "[";
+        for (int i = 0; i < size; i++) {
+            json += "\n" + gson.toJson(usuarios[i]) + ",";
+            //newList[i] = usuarios[i];
+        }
+        //newList[size] = usuario;
+        //usuarios = newList;
+        json += "\n" + gson.toJson(usuario) + "\n]";
+        try (BufferedWriter bfWriter = new BufferedWriter(new FileWriter(filePath))) {
+            bfWriter.write(json);
+            return true;
+        } catch (FileNotFoundException ex) {
+            System.out.println(ex.getMessage());
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return false;
+    }
     
 }

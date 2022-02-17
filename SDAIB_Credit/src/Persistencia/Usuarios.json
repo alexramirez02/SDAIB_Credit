@@ -1,0 +1,14 @@
+[
+{
+  "username": "User1",
+  "password": "Password1",
+  "nombre": "Usuario1",
+  "identificacion": "001"
+},
+{
+  "username": "User2",
+  "password": "Password2",
+  "nombre": "Usuario2",
+  "identificacion": "002"
+}
+]

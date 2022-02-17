@@ -16,6 +16,7 @@ public class UIPrincipal extends javax.swing.JFrame {
     /**
      * Creates new form UIPrincipal
      */
+    
     public UIPrincipal() {
         initComponents();
         this.setVisible(true);
@@ -43,7 +44,6 @@ public class UIPrincipal extends javax.swing.JFrame {
         pnlPrincipal = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(700, 450));
         setResizable(false);
 
         javax.swing.GroupLayout pnlPrincipalLayout = new javax.swing.GroupLayout(pnlPrincipal);

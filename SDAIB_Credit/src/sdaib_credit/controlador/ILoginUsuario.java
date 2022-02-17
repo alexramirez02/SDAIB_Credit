@@ -11,8 +11,8 @@ package sdaib_credit.controlador;
  */
 public interface ILoginUsuario {
      
-    public void recibirUserName();
-    public void recibirPassword();
+    public void recibirUsername(String username);
+    public void recibirPassword(String password);
     public void ingresar();
-    
+    public void regresar();
 }

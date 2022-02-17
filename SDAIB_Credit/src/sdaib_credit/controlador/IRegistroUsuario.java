@@ -9,6 +9,12 @@ package sdaib_credit.controlador;
  * @author User
  */
 public interface IRegistroUsuario {
-   
+    
+    public void recibeNombre(String nombre);
+    public void recibeIdentificacion(String identificacion);
+    public void recibeUsername(String username);
+    public void recibePassword(String password);
+    public void registrar();
+    public void cancelar();
     
 }

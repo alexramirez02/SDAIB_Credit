@@ -11,7 +11,7 @@ package sdaib_credit.modelo;
  */
 public class Persona {
     private String nombre;
-    private String cedula;
+    private String identificacion;
     
     protected Persona(){
         
@@ -25,17 +25,17 @@ public class Persona {
         this.nombre = nombre;
     }
 
-    public String getCedula() {
-        return cedula;
+    public String getIdentificacion() {
+        return identificacion;
     }
 
-    public void setCedula(String cedula) {
-        this.cedula = cedula;
+    public void setIdentificacion(String identificacion) {
+        this.identificacion = identificacion;
     }
 
     @Override
     public String toString() {
-        return "Persona{" + "nombre=" + nombre + ", cedula=" + cedula + '}';
+        return "Persona{" + "nombre=" + nombre + ", cedula=" + identificacion + '}';
     }
     
 }

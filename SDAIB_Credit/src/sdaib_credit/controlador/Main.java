@@ -6,6 +6,7 @@
 package sdaib_credit.controlador;
 
 import sdaib_credit.modelo.UsuarioAdministrador;
+import sdaib_credit.vista.UIPanelPrincipal;
 import sdaib_credit.vista.UIPrincipal;
 
 /**
@@ -15,11 +16,11 @@ import sdaib_credit.vista.UIPrincipal;
 public class Main {
     
     public static UIPrincipal uIPrincipal;
-    private LoginControlador loginControlador;
+    public static PanelPrincipalControlador panelPrincipalControlador;
     
     public Main(){
         uIPrincipal = new UIPrincipal();
-        loginControlador = new LoginControlador();
+        panelPrincipalControlador = new PanelPrincipalControlador();
     }
     
     public static void main(String[] args) {
